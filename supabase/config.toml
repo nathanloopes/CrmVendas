@@ -1,0 +1,7 @@
+project_id = "your-project-ref"
+
+[functions.approve-access-request]
+verify_jwt = true
+
+[functions.extract-transcription-text]
+verify_jwt = true

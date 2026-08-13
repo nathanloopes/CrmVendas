@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 16% 95%;
+    --secondary-foreground: 220 20% 14%;
+
+    --muted: 210 16% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 92%;
+    --input: 214 20% 92%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 14%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 97%;
+    --sidebar-accent-foreground: 217 91% 45%;
+    --sidebar-border: 220 13% 95%;
+    --sidebar-ring: 217 91% 60%;
+
+    --stage-captacao: 217 91% 60%;
+    --stage-qualificacao: 262 83% 58%;
+    --stage-reuniao: 45 93% 47%;
+    --stage-contrato: 142 71% 45%;
+    --stage-ganho: 142 76% 36%;
+    --stage-perdido: 0 72% 51%;
+
+    /* Meeting (LiveKit) theme */
+    --meet-bg: 220 24% 7%;
+    --meet-surface: 220 18% 12%;
+    --meet-surface-2: 220 16% 16%;
+    --meet-stage: 220 30% 4%;
+    --meet-border: 220 14% 22%;
+    --meet-fg: 210 20% 96%;
+    --meet-fg-muted: 215 14% 65%;
+    --meet-accent: 217 91% 60%;
+    --meet-danger: 0 84% 60%;
+    --meet-success: 142 71% 45%;
+    --meet-warning: 38 92% 55%;
+  }
+
+  .dark {
+    /* Backgrounds — sofisticados, baixa saturação (Linear/Vercel) */
+    --background: 222 39% 8%;          /* #0B1220 */
+    --foreground: 210 40% 98%;         /* #F8FAFC */
+
+    --card: 220 39% 11%;               /* #111827 */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 39% 11%;            /* #111827 */
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;            /* #3B82F6 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 39% 13%;          /* superfícies leves */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 14%;              /* mais neutro */
+    --muted-foreground: 215 20% 65%;   /* #94A3B8 */
+
+    --accent: 217 33% 17%;             /* #1E293B */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;          /* #EF4444 — só crítico */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 18%;             /* ~rgba(255,255,255,0.06) */
+    --input: 220 13% 18%;
+    --ring: 217 91% 60%;
+
+    --success: 142 71% 45%;            /* #22C55E */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;             /* #F59E0B — âmbar */
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 222 47% 11%; /* #0F172A */
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 39% 13%;     /* #131C2E hover discreto */
+    --sidebar-accent-foreground: 213 31% 91%; /* #E2E8F0 */
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@keyframes slow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
