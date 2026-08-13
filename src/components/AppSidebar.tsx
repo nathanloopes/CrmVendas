@@ -17,7 +17,6 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/logo.png";
 
 const centralItems: Array<{
   title: string;
@@ -49,7 +48,6 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-border/50">
       <SidebarHeader className="p-4 pb-2">
         <div className="flex items-center gap-3">
-          <img src={logoImg} alt="Logo" className="w-8 h-8 object-contain rounded-lg" />
           {!collapsed && (
             <div>
               <h2 className="text-base font-bold tracking-tight text-sidebar-foreground">

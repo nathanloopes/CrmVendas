@@ -7,7 +7,6 @@ import { NotificationBell } from "@/components/NotificationBell";
 import { RealtimeSync } from "@/components/RealtimeSync";
 import { StaleLeadAlertSystem } from "@/components/StaleLeadAlertSystem";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import logoImg from "@/assets/logo.png";
 
 export default function AppLayout() {
   const { profile } = useAuth();
@@ -19,7 +18,6 @@ export default function AppLayout() {
         <div className="flex-1 min-w-0 overflow-hidden flex flex-col">
           <header className="h-14 flex items-center bg-card px-4 gap-4 shadow-sm border-b border-border/50">
             <SidebarTrigger />
-            <img src={logoImg} alt="Logo" className="w-6 h-6 object-contain" />
             <div className="flex-1" />
             <ThemeToggle />
             <NotificationBell />

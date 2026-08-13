@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Lock, ArrowRight, User } from "lucide-react";
-import { logoPng } from "@/assets";
 
 const ALLOWED_DOMAIN = "@example.com";
 
@@ -203,9 +202,6 @@ export default function Auth() {
     <div className="min-h-screen flex items-center justify-center bg-muted/30 px-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-card shadow-sm border border-border/50 mb-2">
-            <img src={logoPng} alt="Logo" className="w-14 h-14 object-contain" />
-          </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground">Vendas CRM</h1>
           <p className="text-muted-foreground text-sm">
             {isForgotPassword ? "Recupere sua senha" : isSignUp ? "Crie sua conta" : "Acesse sua conta"}
@@ -218,6 +214,24 @@ export default function Auth() {
             <CardDescription>{getDescription()}</CardDescription>
           </CardHeader>
           <CardContent>
+            <Button
+              type="button"
+              onClick={() => { window.location.href = "/"; }}
+              className="w-full rounded-xl shadow-sm bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              Acessar sistema (demo)
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+
+            <div className="relative my-4">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-border" />
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="bg-card px-2 text-muted-foreground">ou entre com suas credenciais</span>
+              </div>
+            </div>
+
             <form onSubmit={getSubmitHandler()} className="space-y-4">
               {isSignUp && !isForgotPassword && (
                 <div className="space-y-2">

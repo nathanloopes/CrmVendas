@@ -115,12 +115,12 @@ export function TaskList({ tasks, showAssignee = false, onTaskClick }: TaskListP
               </TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
-                  <span className={isCompleted ? "line-through" : ""}>{task.title}</span>
+                  <span className={`whitespace-nowrap ${isCompleted ? "line-through" : ""}`}>{task.title}</span>
                   {task.type === "lead" && task.lead_id && (
-                    <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300 border-0 text-xs px-1.5 py-0">Lead</Badge>
+                    <Badge className="shrink-0 bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300 border-0 text-xs px-1.5 py-0">Lead</Badge>
                   )}
                   {!task.lead_id && (
-                    <Badge variant="outline" className="text-xs px-1.5 py-0">Interna</Badge>
+                    <Badge variant="outline" className="shrink-0 text-xs px-1.5 py-0">Interna</Badge>
                   )}
                 </div>
                 {task.description && (
